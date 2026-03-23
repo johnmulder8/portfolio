@@ -15,13 +15,13 @@ const About = () => {
     { name: "React.js / Next.js", level: "Advanced" },
     { name: "Node.js / Express", level: "Advanced" },
     { name: ".NET Core / C#", level: "Advanced" },
+    { name: "Spring Boot", level: "Advanced" },
     { name: "Python", level: "Advanced" },
     { name: "TypeScript / JavaScript", level: "Advanced" },
     { name: "AWS / Azure", level: "Advanced" },
     { name: "SQL / PostgreSQL", level: "Advanced" },
     { name: "Docker / Kubernetes", level: "Intermediate" },
     { name: "CI/CD (GitHub Actions, Jenkins)", level: "Intermediate" },
-    { name: "Microservices Architecture", level: "Advanced" },
   ];
 
   return (

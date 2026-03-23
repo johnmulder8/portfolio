@@ -172,9 +172,11 @@ const Index = () => {
           {/* Updated Skills */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
-              { name: "React.js / Next.js", proficiency: 95 },
               { name: "Node.js / Express", proficiency: 90 },
               { name: ".NET Core / C#", proficiency: 88 },
+              { name: "Spring Boot", proficiency: 85 },
+              { name: "React.js / Next.js", proficiency: 95 },
+              { name: "Angular", proficiency: 84 },
               { name: "Python", proficiency: 85 },
               { name: "AWS / Azure", proficiency: 90 },
               { name: "SQL / PostgreSQL", proficiency: 87 },

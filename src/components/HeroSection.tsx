@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Code, Database, FileCode, Server, Terminal, GitBranch, Globe, Tv } from "lucide-react";
+import { ArrowRight, Code, Sprout , FileCode, Server, Terminal, Globe, Tv, Database, Box } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { Link } from "react-router-dom";
 import SkillCard from "./SkillCard";
@@ -207,12 +207,26 @@ const HeroSection = () => {
 
                 {/* Skills grid */}
                 <SkillCard
-                  icon={Code}
-                  title="React.js"
-                  description="UI development & architecture"
+                  icon={Globe}
+                  title=".NET Stack"
+                  description="Backend API design"
                   className="col-span-3 row-span-2"
                 />
 
+                <SkillCard
+                  icon={Sprout}
+                  title="Spring Boot"
+                  description="Java microservices"
+                  className="col-span-3 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Terminal}
+                  title="Python"
+                  description="Automation & scripting"
+                  className="col-span-3 row-span-2"
+                />
+ 
                 <SkillCard
                   icon={FileCode}
                   title="Node.js"
@@ -221,51 +235,37 @@ const HeroSection = () => {
                 />
 
                 <SkillCard
-                  icon={Globe}
-                  title=".NET Core"
-                  description="Backend API design"
+                  icon={Code}
+                  title="React"
+                  description="Frontend development"
+                  className="col-span-2 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Box}
+                  title="Angular"
+                  description="Frontend development"
+                  className="col-span-2 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Tv}
+                  title="TypeScript"
+                  description="Type-safe JavaScript"
                   className="col-span-2 row-span-2"
                 />
 
                 <SkillCard
                   icon={Database}
-                  title="SQL"
-                  description="Database optimization"
-                  className="col-span-2 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Terminal}
-                  title="Python"
-                  description="Automation & scripting"
-                  className="col-span-2 row-span-2"
+                  title="Databases"
+                  description="Design & optimization"
+                  className="col-span-3 row-span-2"
                 />
 
                 <SkillCard
                   icon={Server}
                   title="AWS / Azure"
                   description="Cloud & CI/CD"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Tv}
-                  title="TypeScript"
-                  description="Full-stack development"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={GitBranch}
-                  title="Microservices"
-                  description="Scalable architecture"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Code}
-                  title="AI Tools"
-                  description="Automation & workflows"
                   className="col-span-3 row-span-2"
                 />
               </div>
