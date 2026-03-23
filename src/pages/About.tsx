@@ -51,7 +51,7 @@ const About = () => {
           </motion.div>
 
           {/* Profile and Intro */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ const About = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col justify-center"
+              className="flex flex-col"
             >
               <h2 className="text-3xl font-bold mb-6">
                 <AnimatedText text="Who am I?" once />
