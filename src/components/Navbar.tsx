@@ -86,7 +86,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              John Mulder.
+              John Mulder
             </motion.span>
           </NavLink>
 
