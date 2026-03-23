@@ -59,7 +59,7 @@ const About = () => {
               whileHover={{ boxShadow: "0 20px 25px -5px rgba(155, 135, 245, 0.15)" }}
             >
               <div className="glass-panel h-full p-8 rounded-lg">
-                <div className="relative w-full h-80 rounded-lg mb-8 overflow-hidden">
+                <div className="relative w-full rounded-lg mb-8 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-blue-500/20"></div>
                   <img
                     src="/uploads/me.png"
