@@ -112,7 +112,7 @@ const Resume = () => {
     },
     {
       position: "Backend Developer",
-      company: "Createotech",
+      company: "Raytheon Technologies",
       duration: "March 2014 – December 2015",
       description: "",
       responsibilities: [],
