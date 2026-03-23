@@ -320,7 +320,7 @@ const Resume = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground">
-                Senior Software Engineer with 15+ years in scalable, cloud-based software engineering across EdTech, FinTech, and SaaS industries. Passionate about building reliable systems and mentoring teams.
+                Senior Software Engineer with 12+ years in scalable, cloud-based software engineering across E-commerce, Healthcare, and SaaS industries. Passionate about building reliable systems and mentoring teams.
               </p>
             </div>
           </motion.div>

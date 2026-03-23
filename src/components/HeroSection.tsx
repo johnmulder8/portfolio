@@ -141,8 +141,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Experienced software engineer with over 12 years in designing, developing, and deploying scalable web applications across EdTech, FinTech, and SaaS industries.
-              Specialized in React, Node.js, .NET Core, and cloud platforms like AWS and Azure.
+              Experienced software engineer with over 12 years in designing, developing, and deploying scalable web applications across E-commerce, Healthcare, and SaaS industries.
+              Specialized in .NET, Spring Boot, Node.js, React, Angular, and cloud platforms like AWS and Azure.
               Focused on building secure, high-performance solutions and leveraging AI tools to enhance development workflows.
             </motion.p>
 

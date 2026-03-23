@@ -14,7 +14,7 @@ const About = () => {
   const skills = [
     { name: "React.js / Next.js", level: "Advanced" },
     { name: "Node.js / Express", level: "Advanced" },
-    { name: ".NET Core / C#", level: "Advanced" },
+    { name: ".Net / C#", level: "Advanced" },
     { name: "Spring Boot", level: "Advanced" },
     { name: "Python", level: "Advanced" },
     { name: "TypeScript / JavaScript", level: "Advanced" },
@@ -44,7 +44,7 @@ const About = () => {
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground">
                 I'm a Senior Software Engineer with over 12 years of experience designing,
-                developing, and deploying secure, scalable web applications across EdTech, FinTech,
+                developing, and deploying secure, scalable web applications across E-commerce, Healthcare,
                 and SaaS industries.
               </p>
             </div>
@@ -91,7 +91,7 @@ const About = () => {
                   and have extensive experience deploying distributed systems in <strong>AWS</strong> and <strong>Azure</strong>.
                 </p>
                 <p>
-                  My career has spanned over 12 years across EdTech, FinTech, and SaaS industries.
+                  My career has spanned over 12 years across E-commerce, Healthcare, and SaaS industries.
                   I’ve contributed to modernizing large-scale legacy systems, building microservices
                   from the ground up, and leading engineering teams through cloud migrations and
                   CI/CD automation.

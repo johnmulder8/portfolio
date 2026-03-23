@@ -64,7 +64,7 @@ const Index = () => {
             <h2 className="text-4xl font-bold mb-6">Who I Am</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground">
               I'm a Senior Software Engineer with over 12 years of experience developing scalable web
-              applications and cloud solutions across EdTech, FinTech, and SaaS industries. I
+              applications and cloud solutions across E-commerce, Healthcare, and SaaS industries. I
               specialize in full-stack development with React, Node.js, and .NET Core, and have
               extensive experience deploying distributed systems on AWS and Azure. My focus is on
               creating secure, high-performance applications and leveraging AI tools to enhance code
@@ -172,12 +172,12 @@ const Index = () => {
           {/* Updated Skills */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
+              { name: ".NET / C#", proficiency: 98 },
+              { name: "Spring Boot", proficiency: 97 },
               { name: "Node.js / Express", proficiency: 90 },
-              { name: ".NET Core / C#", proficiency: 88 },
-              { name: "Spring Boot", proficiency: 85 },
-              { name: "React.js / Next.js", proficiency: 95 },
-              { name: "Angular", proficiency: 84 },
               { name: "Python", proficiency: 85 },
+              { name: "React.js / Next.js", proficiency: 95 },
+              { name: "Angular", proficiency: 90 },
               { name: "AWS / Azure", proficiency: 90 },
               { name: "SQL / PostgreSQL", proficiency: 87 },
               { name: "TypeScript / JavaScript", proficiency: 92 },
