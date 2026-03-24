@@ -1,4 +1,5 @@
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+﻿import { collection, addDoc, getDocs, query, orderBy, doc, updateDoc, deleteDoc, getDoc, serverTimestamp, Timestamp } from "firebase/firestore";
+import { db } from "@/firebase/config";
 
 export interface ContactMessage {
   id: string;
@@ -6,7 +7,6 @@ export interface ContactMessage {
   email: string;
   subject: string;
   message: string;
-  user_id: string | null;
   created_at: string;
   is_read: boolean;
 }
@@ -16,7 +16,31 @@ export type ContactMessageInsert = Omit<
   "id" | "created_at" | "is_read"
 >;
 
-const COLLECTION_NAME = "contact_messages";
+const COLLECTION_NAME = "contacts";
+
+const normalizeContactMessage = (id: string, data: Record<string, unknown>): ContactMessage => {
+  const createdAtRaw = data.created_at;
+  let createdAtString = new Date().toISOString();
+
+  if (createdAtRaw instanceof Timestamp) {
+    createdAtString = createdAtRaw.toDate().toISOString();
+  } else if (createdAtRaw) {
+    const parsed = new Date(typeof createdAtRaw === "string" ? createdAtRaw : "");
+    if (!isNaN(parsed.getTime())) {
+      createdAtString = parsed.toISOString();
+    }
+  }
+
+  return {
+    id,
+    name: typeof data.name === "string" ? data.name : "",
+    email: typeof data.email === "string" ? data.email : "",
+    subject: typeof data.subject === "string" ? data.subject : "",
+    message: typeof data.message === "string" ? data.message : "",
+    created_at: createdAtString,
+    is_read: typeof data.is_read === "boolean" ? data.is_read : false,
+  };
+};
 
 export const contactService = {
   async getAllMessages(): Promise<{
@@ -24,9 +48,10 @@ export const contactService = {
     error: Error | null;
   }> {
     try {
-      console.log("=== FETCHING ALL MESSAGES ===");
-      console.log("Collection name:", COLLECTION_NAME);
-      return { data: [], error: null };
+      const q = query(collection(db, COLLECTION_NAME), orderBy("created_at", "desc"));
+      const snapshot = await getDocs(q);
+      const messages = snapshot.docs.map((docSnapshot) => normalizeContactMessage(docSnapshot.id, docSnapshot.data()));
+      return { data: messages, error: null };
     } catch (error) {
       console.error("❌ Error fetching messages:", error);
       return { data: null, error: error as Error };
@@ -37,35 +62,26 @@ export const contactService = {
     message: ContactMessageInsert
   ): Promise<{ data: ContactMessage | null; error: Error | null }> {
     try {
-      console.log("=== INSERTING MESSAGE ===");
-      console.log("Collection name:", COLLECTION_NAME);
-      console.log("Message data:", message);
+      const docRef = await addDoc(collection(db, COLLECTION_NAME), {
+        ...message,
+        created_at: serverTimestamp(),
+        is_read: false,
+      });
 
-      // Test if we can access the collection
-      console.log("Testing collection access...");
-
-      console.log("Adding document to Firestore...");
-
-      console.log("✅ Message insert completed successfully");
       return {
         data: {
-          id: "generated_id",
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-          user_id: null,
+          id: docRef.id,
+          name: message.name,
+          email: message.email,
+          subject: message.subject,
+          message: message.message,
           created_at: new Date().toISOString(),
-          is_read: true,
+          is_read: false,
         },
         error: null,
       };
     } catch (error) {
-      console.error("❌ Error inserting message:");
-      console.error("Error object:", error);
-      console.error("Error message:", (error as Error).message);
-      console.error("Error code:", (error as any).code);
-      console.error("Error stack:", (error as Error).stack);
+      console.error("❌ Error inserting message:", error);
       return { data: null, error: error as Error };
     }
   },
@@ -74,24 +90,15 @@ export const contactService = {
     id: string
   ): Promise<{ data: ContactMessage | null; error: Error | null }> {
     try {
-      console.log("=== MARKING MESSAGE AS READ ===");
-      console.log("Message ID:", id);
+      const docRef = doc(db, COLLECTION_NAME, id);
+      await updateDoc(docRef, { is_read: true });
 
-      console.log("✅ Message marked as read successfully");
+      const updatedDoc = await getDoc(docRef);
+      if (!updatedDoc.exists()) {
+        throw new Error("Message not found");
+      }
 
-      // Return a placeholder message since we don't fetch the updated document
-      const updatedMessage: ContactMessage = {
-        id,
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        user_id: null,
-        created_at: new Date().toISOString(),
-        is_read: true,
-      };
-
-      return { data: updatedMessage, error: null };
+      return { data: normalizeContactMessage(updatedDoc.id, updatedDoc.data()), error: null };
     } catch (error) {
       console.error("❌ Error marking message as read:", error);
       return { data: null, error: error as Error };
@@ -100,10 +107,7 @@ export const contactService = {
 
   async deleteMessage(id: string): Promise<{ error: Error | null }> {
     try {
-      console.log("=== DELETING MESSAGE ===");
-      console.log("Message ID:", id);
-
-      console.log("✅ Message deleted successfully");
+      await deleteDoc(doc(db, COLLECTION_NAME, id));
       return { error: null };
     } catch (error) {
       console.error("❌ Error deleting message:", error);

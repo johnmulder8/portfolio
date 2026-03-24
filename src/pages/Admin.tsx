@@ -6,7 +6,7 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { useToast } from "@/hooks/use-toast";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Eye, EyeOff, Clock } from "lucide-react";
+import { CheckCircle, Eye, EyeOff, Clock, Trash2 } from "lucide-react";
 import { ContactMessage } from "@/services/contactService";
 import { useContactMessages } from "@/hooks/useFirebase";
 
@@ -37,6 +37,28 @@ const Admin = () => {
     } catch (err: any) {
       toast({
         title: "Error updating message",
+        description: err.message,
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleDeleteMessage = async (message: ContactMessage) => {
+    try {
+      await deleteMessage(message.id);
+      
+      if (selectedMessage?.id === message.id) {
+        setSelectedMessage(null);
+      }
+      
+      toast({
+        title: "Message deleted",
+        description: "The contact message has been permanently deleted.",
+        variant: "default",
+      });
+    } catch (err: any) {
+      toast({
+        title: "Error deleting message",
         description: err.message,
         variant: "destructive",
       });
@@ -124,7 +146,7 @@ const Admin = () => {
                             <TableCell>{message.name}</TableCell>
                             <TableCell>{message.subject}</TableCell>
                             <TableCell>{formatDate(message.created_at)}</TableCell>
-                            <TableCell className="text-right">
+                            <TableCell className="flex justify-end space-x-2">
                               <Button 
                                 variant="ghost" 
                                 size="sm"
@@ -138,6 +160,14 @@ const Admin = () => {
                                 onClick={() => handleMarkAsRead(message)}
                               >
                                 {message.is_read ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                              </Button>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => handleDeleteMessage(message)}
+                                className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                              >
+                                <Trash2 className="h-4 w-4" />
                               </Button>
                             </TableCell>
                           </TableRow>

@@ -41,7 +41,6 @@ const ContactForm = () => {
         email: formData.email.trim(),
         subject: formData.subject.trim(),
         message: formData.message.trim(),
-        user_id: null
       };
       
       const result = await contactService.insertMessage(messageData);
