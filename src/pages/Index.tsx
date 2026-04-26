@@ -13,35 +13,35 @@ const Index = () => {
 
   const featuredProjects = [
     {
-      id: 1,
-      title: "Doctor Site",
-      description: "Full stack responsive medicare-booking design built with React.js and Tailwind CSS.",
-      image: "/images/doctor-site.png",
-      tags: ["React", "Tailwind", "Full Stack"],
-      code: "https://github.com/johnmulder8/doctor-site",
-      demo: "https://doctor-site-roan.vercel.app/",
-      category: "fullstack"
+    id: 1,
+    title: "Medicare App",
+    description: "Full stack responsive medicare-booking design built with React.js and Tailwind CSS.",
+    image: "/images/doctor-site.png",
+    tags: ["React", "Tailwind", "Full Stack"],
+    code: "https://github.com/johnmulder8/medicare-app",
+    demo: "https://doctor-site-roan.vercel.app/",
+    category: "fullstack"
     },
     {
       id: 2,
-      title: "AWS Serverless Auth App",
-      description: "Serverless backend using AWS Lambda, API Gateway, and Cognito for secure authentication.",
-      image: "/images/aws-serverless-auth-reference-app.png",
-      tags: ["AWS", "Lambda", "Cognito", "API Gateway"],
-      code: "https://github.com/amazon-archives/aws-serverless-auth-reference-app",
-      demo: "https://reinvent.awsevents.com/",
-      category: "cloud"
+      title: "Restaurant App",
+      description: "Fully responsive food app design built with Next.js, Tailwind, and TypeScript.",
+      image: "/images/restaurant.png",
+      tags: ["Next.js", "Tailwind", "TypeScript"],
+      code: "https://github.com/johnmulder8/restaurant-app",
+      demo: "https://restaurant-seven-murex.vercel.app/",
+      category: "fullstack"
     },
     {
       id: 3,
-      title: "GPT-3 UI",
-      description: "Modern GPT-3 mobile responsive user interface built with React.js.",
-      image: "/images/gpt3.png",
-      tags: ["React", "OpenAI", "Frontend"],
-      code: "https://github.com/johnmulder8/gpt3",
-      demo: "https://williamsgelo.github.io/gpt3/",
-      category: "ai"
-    }
+      title: "Best Coffee Store",
+      description: "Coffee store mobile-responsive site created with HTML, CSS, and JavaScript.",
+      image: "/images/coffee-store.png",
+      tags: ["HTML", "CSS", "JavaScript"],
+      code: "https://github.com/johnmulder8/best-coffee",
+      demo: "https://johnmulder8.github.io/best-coffee/",
+      category: "fullstack"
+    },
   ];
 
   return (

@@ -26,11 +26,11 @@ const Projects = () => {
 const projects = [
   {
     id: 1,
-    title: "Doctor Site",
+    title: "Medicare App",
     description: "Full stack responsive medicare-booking design built with React.js and Tailwind CSS.",
     image: "/images/doctor-site.png",
     tags: ["React", "Tailwind", "Full Stack"],
-    code: "https://github.com/johnmulder8/doctor-site",
+    code: "https://github.com/johnmulder8/medicare-app",
     demo: "https://doctor-site-roan.vercel.app/",
     category: "fullstack"
   },
@@ -40,28 +40,28 @@ const projects = [
     description: "Fully responsive food app design built with Next.js, Tailwind, and TypeScript.",
     image: "/images/restaurant.png",
     tags: ["Next.js", "Tailwind", "TypeScript"],
-    code: "https://github.com/johnmulder8/restaurant",
+    code: "https://github.com/johnmulder8/restaurant-app",
     demo: "https://restaurant-seven-murex.vercel.app/",
     category: "fullstack"
   },
   {
     id: 3,
-    title: "Coffee Store",
+    title: "Best Coffee Store",
     description: "Coffee store mobile-responsive site created with HTML, CSS, and JavaScript.",
     image: "/images/coffee-store.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    code: "https://github.com/johnmulder8/coffee-store",
-    demo: "https://williamsgelo.github.io/coffee-store/",
+    code: "https://github.com/johnmulder8/best-coffee",
+    demo: "https://johnmulder8.github.io/best-coffee/",
     category: "fullstack"
   },
   {
     id: 4,
-    title: "Language Translator",
+    title: "Translator",
     description: "Article Summarizer web app built with OpenAI API, Redux, and React.",
     image: "/images/language-translator.png",
     tags: ["React", "Redux", "OpenAI API"],
-    code: "https://github.com/johnmulder8/language-translator",
-    demo: "https://williamsgelo.github.io/language-translator/",
+    code: "https://github.com/johnmulder8/translator",
+    demo: "https://johnmulder8.github.io/translator/",
     category: "ai"
   },
   {
@@ -70,60 +70,30 @@ const projects = [
     description: "Modern UI/UX business app built with React.js and Tailwind CSS.",
     image: "/images/mordern-bank.png",
     tags: ["React", "Tailwind", "UI/UX"],
-    code: "https://github.com/johnmulder8/mordern-bank",
+    code: "https://github.com/johnmulder8/modern-bank-app",
     demo: "https://mordern-bank-ten.vercel.app/",
     category: "fullstack"
   },
   {
     id: 6,
-    title: "AWS Serverless Auth App",
-    description: "Serverless backend using AWS Lambda, API Gateway, and Cognito for secure authentication.",
-    image: "/images/aws-serverless-auth-reference-app.png",
-    tags: ["AWS", "Lambda", "Cognito", "API Gateway"],
-    code: "https://github.com/amazon-archives/aws-serverless-auth-reference-app",
-    demo: "https://reinvent.awsevents.com/",
-    category: "cloud"
-  },
-  {
-    id: 7,
-    title: "GPT-3 UI",
-    description: "Modern GPT-3 mobile responsive user interface built with React.js.",
-    image: "/images/gpt3.png",
-    tags: ["React", "OpenAI", "Frontend"],
-    code: "https://github.com/johnmulder8/gpt3",
-    demo: "https://williamsgelo.github.io/gpt3/",
-    category: "ai"
-  },
-  {
-    id: 8,
     title: "Quiz App",
     description: "Mobile-responsive multiple-choice quiz app built with React.js.",
     image: "/images/quizapp.png",
     tags: ["React", "Frontend", "Quiz"],
-    code: "https://github.com/johnmulder8/quizapp",
-    demo: "https://johnmulder8.github.io/quizapp",
+    code: "https://github.com/johnmulder8/quiz-app",
+    demo: "https://johnmulder8.github.io/quiz-app",
     category: "fullstack"
   },
   {
-    id: 9,
-    title: "Magic Memory Game",
+    id: 7,
+    title: "Magic Match Game",
     description: "Mobile responsive fun memory game built with React.js.",
     image: "/images/magic-memory.png",
     tags: ["React", "Game", "Frontend"],
-    code: "https://github.com/johnmulder8/magic-memory",
-    demo: "https://williamsgelo.github.io/magic-memory/",
+    code: "https://github.com/johnmulder8/magic-match-game",
+    demo: "https://johnmulder8.github.io/magic-match-game/",
     category: "fullstack"
   },
-  {
-    id: 10,
-    title: "Stripe Menu",
-    description: "Mobile-responsive Stripe-style navigation menu built with React.js.",
-    image: "/images/stripe-menu.png",
-    tags: ["React", "Frontend", "UI"],
-    code: "https://github.com/johnmulder8/stripe-menu",
-    demo: "https://williamsgelo.github.io/stripe-menu/",
-    category: "fullstack"
-  }
 ];
 
   const getIcon = (category: string) => {
